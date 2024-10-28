@@ -1,11 +1,12 @@
 ﻿@model JulianTorres_ExamenP1.Models.JTTabla
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "JTDelete";
 }
 
-<h1>Details</h1>
+<h1>Delete</h1>
 
+<h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>JTTabla</h4>
     <hr />
@@ -47,8 +48,10 @@
             @Html.DisplayFor(model => model.JTPVP)
         </dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.JTTablaId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    
+    <form asp-action="JTDelete">
+        <input type="hidden" asp-for="JTTablaId" />
+        <input type="submit" value="JTDelete" class="btn btn-danger" /> |
+        <a asp-action="JTIndex">Back to List</a>
+    </form>
 </div>

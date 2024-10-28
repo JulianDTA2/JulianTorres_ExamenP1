@@ -20,7 +20,7 @@ namespace JulianTorres_ExamenP1.Controllers
         }
 
         // GET: JTTabla
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> JTIndex()
         {
               return _context.JTTabla != null ? 
                           View(await _context.JTTabla.ToListAsync()) :
@@ -28,7 +28,7 @@ namespace JulianTorres_ExamenP1.Controllers
         }
 
         // GET: JTTabla/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> JTDetails(int? id)
         {
             if (id == null || _context.JTTabla == null)
             {
@@ -46,7 +46,7 @@ namespace JulianTorres_ExamenP1.Controllers
         }
 
         // GET: JTTabla/Create
-        public IActionResult Create()
+        public IActionResult JTCreate()
         {
             return View();
         }
@@ -56,19 +56,19 @@ namespace JulianTorres_ExamenP1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("JTTablaId,JTTablaObjeto,JTCostoBruto,JTALaVenta,JTEmailAddress,JTFecha,JTPVP")] JTTabla jTTabla)
+        public async Task<IActionResult> JTCreate([Bind("JTTablaId,JTTablaObjeto,JTCostoBruto,JTALaVenta,JTEmailAddress,JTFecha,JTPVP")] JTTabla jTTabla)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(jTTabla);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(JTIndex));
             }
             return View(jTTabla);
         }
 
         // GET: JTTabla/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> JTEdit(int? id)
         {
             if (id == null || _context.JTTabla == null)
             {
@@ -88,7 +88,7 @@ namespace JulianTorres_ExamenP1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("JTTablaId,JTTablaObjeto,JTCostoBruto,JTALaVenta,JTEmailAddress,JTFecha,JTPVP")] JTTabla jTTabla)
+        public async Task<IActionResult> JTEdit(int id, [Bind("JTTablaId,JTTablaObjeto,JTCostoBruto,JTALaVenta,JTEmailAddress,JTFecha,JTPVP")] JTTabla jTTabla)
         {
             if (id != jTTabla.JTTablaId)
             {
@@ -113,13 +113,13 @@ namespace JulianTorres_ExamenP1.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(JTIndex));
             }
             return View(jTTabla);
         }
 
         // GET: JTTabla/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> JTDelete(int? id)
         {
             if (id == null || _context.JTTabla == null)
             {
@@ -137,7 +137,7 @@ namespace JulianTorres_ExamenP1.Controllers
         }
 
         // POST: JTTabla/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("JTDelete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
@@ -152,7 +152,7 @@ namespace JulianTorres_ExamenP1.Controllers
             }
             
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(JTIndex));
         }
 
         private bool JTTablaExists(int id)
