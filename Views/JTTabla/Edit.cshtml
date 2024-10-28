@@ -14,18 +14,18 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="JTTablaId" />
             <div class="form-group">
-                <label asp-for="JTTablaName" class="control-label"></label>
-                <input asp-for="JTTablaName" class="form-control" />
-                <span asp-validation-for="JTTablaName" class="text-danger"></span>
+                <label asp-for="JTTablaObjeto" class="control-label"></label>
+                <input asp-for="JTTablaObjeto" class="form-control" />
+                <span asp-validation-for="JTTablaObjeto" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="JTTablaValue" class="control-label"></label>
-                <input asp-for="JTTablaValue" class="form-control" />
-                <span asp-validation-for="JTTablaValue" class="text-danger"></span>
+                <label asp-for="JTCostoBruto" class="control-label"></label>
+                <input asp-for="JTCostoBruto" class="form-control" />
+                <span asp-validation-for="JTCostoBruto" class="text-danger"></span>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="JTIsTabla" /> @Html.DisplayNameFor(model => model.JTIsTabla)
+                    <input class="form-check-input" asp-for="JTALaVenta" /> @Html.DisplayNameFor(model => model.JTALaVenta)
                 </label>
             </div>
             <div class="form-group">
@@ -39,9 +39,9 @@
                 <span asp-validation-for="JTFecha" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="JTTablaPrice" class="control-label"></label>
-                <input asp-for="JTTablaPrice" class="form-control" />
-                <span asp-validation-for="JTTablaPrice" class="text-danger"></span>
+                <label asp-for="JTPVP" class="control-label"></label>
+                <input asp-for="JTPVP" class="form-control" />
+                <span asp-validation-for="JTPVP" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

@@ -56,7 +56,7 @@ namespace JulianTorres_ExamenP1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("JTTablaId,JTTablaName,JTTablaValue,JTIsTabla,JTEmailAddress,JTFecha,JTTablaPrice")] JTTabla jTTabla)
+        public async Task<IActionResult> Create([Bind("JTTablaId,JTTablaObjeto,JTCostoBruto,JTALaVenta,JTEmailAddress,JTFecha,JTPVP")] JTTabla jTTabla)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace JulianTorres_ExamenP1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("JTTablaId,JTTablaName,JTTablaValue,JTIsTabla,JTEmailAddress,JTFecha,JTTablaPrice")] JTTabla jTTabla)
+        public async Task<IActionResult> Edit(int id, [Bind("JTTablaId,JTTablaObjeto,JTCostoBruto,JTALaVenta,JTEmailAddress,JTFecha,JTPVP")] JTTabla jTTabla)
         {
             if (id != jTTabla.JTTablaId)
             {

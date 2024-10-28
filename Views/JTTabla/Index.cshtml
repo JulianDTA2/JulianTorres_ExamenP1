@@ -13,13 +13,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.JTTablaName)
+                @Html.DisplayNameFor(model => model.JTTablaObjeto)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.JTTablaValue)
+                @Html.DisplayNameFor(model => model.JTCostoBruto)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.JTIsTabla)
+                @Html.DisplayNameFor(model => model.JTALaVenta)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.JTEmailAddress)
@@ -28,7 +28,7 @@
                 @Html.DisplayNameFor(model => model.JTFecha)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.JTTablaPrice)
+                @Html.DisplayNameFor(model => model.JTPVP)
             </th>
             <th></th>
         </tr>
@@ -37,13 +37,13 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.JTTablaName)
+                @Html.DisplayFor(modelItem => item.JTTablaObjeto)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.JTTablaValue)
+                @Html.DisplayFor(modelItem => item.JTCostoBruto)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.JTIsTabla)
+                @Html.DisplayFor(modelItem => item.JTALaVenta)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.JTEmailAddress)
@@ -52,7 +52,7 @@
                 @Html.DisplayFor(modelItem => item.JTFecha)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.JTTablaPrice)
+                @Html.DisplayFor(modelItem => item.JTPVP)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.JTTablaId">Edit</a> |

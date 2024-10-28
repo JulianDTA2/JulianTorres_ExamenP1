@@ -4,6 +4,7 @@ using JulianTorres_ExamenP1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JulianTorres_ExamenP1.Migrations
 {
     [DbContext(typeof(JulianTorres_ExamenP1Context))]
-    partial class JulianTorres_ExamenP1ContextModelSnapshot : ModelSnapshot
+    [Migration("20241028150257_DBJulianTorres1")]
+    partial class DBJulianTorres1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,25 +32,25 @@ namespace JulianTorres_ExamenP1.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("JTTablaId"), 1L, 1);
 
-                    b.Property<bool>("JTALaVenta")
-                        .HasColumnType("bit");
-
-                    b.Property<float>("JTCostoBruto")
-                        .HasColumnType("real");
-
                     b.Property<string>("JTEmailAddress")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("JTFecha")
                         .HasColumnType("datetime2");
 
-                    b.Property<decimal?>("JTPVP")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<bool>("JTIsTabla")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("JTTablaObjeto")
+                    b.Property<string>("JTTablaName")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<decimal?>("JTTablaPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<float>("JTTablaValue")
+                        .HasColumnType("real");
 
                     b.HasKey("JTTablaId");
 
